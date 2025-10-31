@@ -9,7 +9,10 @@ SCREEN_HEIGHT = 400
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-moving = False
+movingLeft = False
+movingDown = False
+movingUp = False
+movingRight = False
 
 class player:
     run = True
@@ -21,11 +24,23 @@ class player:
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_a:
-                    moving = True
+                    movingLeft = True
+                if event.key == pygame.K_s:
+                    movingDown = True
+                if event.key == pygame.K_w:
+                    movingUp = True
+                if event.key == pygame.K_d:
+                    movingRight = True
         
-        if moving == True:
-            print("Moving")
-            
+        if movingLeft == True:
+            print("Moving left")
+        if movingDown == True:
+            print("Moving down")
+        if movingUp == True:
+            print("Moving up")
+        if movingRight == True:
+            print("Moving right")
+
 class bot_bandit:
     pass
 
